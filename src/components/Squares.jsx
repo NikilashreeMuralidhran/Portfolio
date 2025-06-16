@@ -44,7 +44,8 @@ const Squares = ({
 
           if (
             hoveredSquareRef.current &&
-            Math.floor((x - startX) / squareSize) === hoveredSquareRef.current.x &&
+            Math.floor((x - startX) / squareSize) ===
+            hoveredSquareRef.current.x &&
             Math.floor((y - startY) / squareSize) === hoveredSquareRef.current.y
           ) {
             ctx.fillStyle = hoverFillColor;
@@ -75,20 +76,26 @@ const Squares = ({
       const effectiveSpeed = Math.max(speed, 0.1);
       switch (direction) {
         case "right":
-          gridOffset.current.x = (gridOffset.current.x - effectiveSpeed + squareSize) % squareSize;
+          gridOffset.current.x =
+            (gridOffset.current.x - effectiveSpeed + squareSize) % squareSize;
           break;
         case "left":
-          gridOffset.current.x = (gridOffset.current.x + effectiveSpeed + squareSize) % squareSize;
+          gridOffset.current.x =
+            (gridOffset.current.x + effectiveSpeed + squareSize) % squareSize;
           break;
         case "up":
-          gridOffset.current.y = (gridOffset.current.y + effectiveSpeed + squareSize) % squareSize;
+          gridOffset.current.y =
+            (gridOffset.current.y + effectiveSpeed + squareSize) % squareSize;
           break;
         case "down":
-          gridOffset.current.y = (gridOffset.current.y - effectiveSpeed + squareSize) % squareSize;
+          gridOffset.current.y =
+            (gridOffset.current.y - effectiveSpeed + squareSize) % squareSize;
           break;
         case "diagonal":
-          gridOffset.current.x = (gridOffset.current.x - effectiveSpeed + squareSize) % squareSize;
-          gridOffset.current.y = (gridOffset.current.y - effectiveSpeed + squareSize) % squareSize;
+          gridOffset.current.x =
+            (gridOffset.current.x - effectiveSpeed + squareSize) % squareSize;
+          gridOffset.current.y =
+            (gridOffset.current.y - effectiveSpeed + squareSize) % squareSize;
           break;
         default:
           break;
@@ -106,8 +113,12 @@ const Squares = ({
       const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize;
       const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize;
 
-      const hoveredSquareX = Math.floor((mouseX + gridOffset.current.x - startX) / squareSize);
-      const hoveredSquareY = Math.floor((mouseY + gridOffset.current.y - startY) / squareSize);
+      const hoveredSquareX = Math.floor(
+        (mouseX + gridOffset.current.x - startX) / squareSize
+      );
+      const hoveredSquareY = Math.floor(
+        (mouseY + gridOffset.current.y - startY) / squareSize
+      );
 
       if (
         !hoveredSquareRef.current ||
@@ -137,7 +148,7 @@ const Squares = ({
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full min-h-screen border-none block"
+      className="w-full h-full border-none block"
     ></canvas>
   );
 };
