@@ -7,6 +7,9 @@ import VariableProximity from './components/VariableProximity'
 import SplitText from './components/SplitText'
 import BlurText from './components/BlurText'
 import About from './components/About';
+import ScrollVelocity from './components/ScrollVelocity';
+import TextPressure from './components/TextPressure';
+import AboutHeader from './components/AboutHeader';
 
 
 
@@ -77,16 +80,9 @@ function App() {
                 </div>
 
             </div>
+            <AboutHeader />
+
             <About />
-            <VariableProximity
-                        label={'ABOUT'}
-                        className={'variable-proximity-demo font-variable text-5xl text-white-400 mt-4'}
-                        fromFontVariationSettings="'wght' 400, 'opsz' 9"
-                        toFontVariationSettings="'wght' 1000, 'opsz' 40"
-                        containerRef={containerRef}
-                        radius={100}
-                        falloff='linear'
-                    />
 
 
         </div>
